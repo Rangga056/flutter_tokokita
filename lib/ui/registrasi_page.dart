@@ -4,7 +4,7 @@ import 'package:flutter_tokokita/widget/success_dialog.dart';
 import 'package:flutter_tokokita/widget/warning_dialog.dart';
 
 class RegistrasiPage extends StatefulWidget {
-  const RegistrasiPage({Key? key}) : super(key: key);
+  const RegistrasiPage({super.key});
 
   @override
   _RegistrasiPageState createState() => _RegistrasiPageState();

@@ -7,7 +7,7 @@ import 'package:flutter_tokokita/widget/warning_dialog.dart';
 class ProdukForm extends StatefulWidget {
   Produk? produk;
 
-  ProdukForm({Key? key, this.produk}) : super(key: key);
+  ProdukForm({super.key, this.produk});
 
   @override
   _ProdukFormState createState() => _ProdukFormState();

@@ -7,7 +7,7 @@ import 'package:flutter_tokokita/ui/produk_detail.dart';
 import 'package:flutter_tokokita/ui/produk_form.dart';
 
 class ProdukPage extends StatefulWidget {
-  const ProdukPage({Key? key}) : super(key: key);
+  const ProdukPage({super.key});
 
   @override
   _ProdukPageState createState() => _ProdukPageState();
@@ -39,8 +39,10 @@ class _ProdukPageState extends State<ProdukPage> {
               trailing: const Icon(Icons.logout),
               onTap: () async {
                 await LogoutBloc.logout().then((value) => {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => LoginPage()))
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const LoginPage()))
                     });
               },
             )
@@ -67,7 +69,7 @@ class _ProdukPageState extends State<ProdukPage> {
 class ListProduk extends StatelessWidget {
   final List? list;
 
-  const ListProduk({Key? key, this.list}) : super(key: key);
+  const ListProduk({super.key, this.list});
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +86,7 @@ class ListProduk extends StatelessWidget {
 class ItemProduk extends StatelessWidget {
   final Produk produk;
 
-  const ItemProduk({Key? key, required this.produk}) : super(key: key);
+  const ItemProduk({super.key, required this.produk});
 
   @override
   Widget build(BuildContext context) {

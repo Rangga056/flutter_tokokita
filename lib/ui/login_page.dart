@@ -6,7 +6,7 @@ import 'package:flutter_tokokita/ui/registrasi_page.dart';
 import 'package:flutter_tokokita/widget/warning_dialog.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   _LoginPageState createState() => _LoginPageState();

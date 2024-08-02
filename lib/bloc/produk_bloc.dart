@@ -5,14 +5,27 @@ import 'package:flutter_tokokita/helpers/api_url.dart';
 import 'package:flutter_tokokita/model/produk.dart';
 
 class ProdukBloc {
+  // static Future<List<Produk>> getProduks() async {
+  //   String apiUrl = ApiUrl.listProduk;
+  //   var response = await Api().get(apiUrl);
+  //   var jsonObj = json.decode(response.body);
+  //   List<dynamic> listProduk = (jsonObj as Map<String, dynamic>)['data'];
+  //   List<Produk> produks = [];
+  //   for (int i = 0; i < listProduk.length; i++) {
+  //     produks.add(Produk.fromJson(listProduk[i]));
+  //   }
+  //   return produks;
+  // }
+
   static Future<List<Produk>> getProduks() async {
     String apiUrl = ApiUrl.listProduk;
-    var response = await Api().get(apiUrl);
+    var response = await Api().get(Uri.parse(apiUrl));
+    print("Response Body: ${response.body}"); // Log response body
     var jsonObj = json.decode(response.body);
     List<dynamic> listProduk = (jsonObj as Map<String, dynamic>)['data'];
     List<Produk> produks = [];
-    for (int i = 0; i < listProduk.length; i++) {
-      produks.add(Produk.fromJson(listProduk[i]));
+    for (var item in listProduk) {
+      produks.add(Produk.fromJson(item));
     }
     return produks;
   }
